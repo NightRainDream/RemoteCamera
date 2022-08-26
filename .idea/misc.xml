@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1855" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/drawable/window_background.xml" value="0.1855" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout-large/session_frag.xml" value="0.1328125" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/about_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/activity_main.xml" value="0.3359375" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/drive_lens_pane.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/gallery_frag.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/gallery_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/liveview.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/picture_frag.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/properties_grid.xml" value="0.22" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/property_icon_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/property_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/property_listview.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/session.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/session_frag.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/thumbnail_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/layout/webview_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/menu/main_menu.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProject/UsbDemo/app/src/main/res/xml/app_settings_preferences.xml" value="0.17708333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
