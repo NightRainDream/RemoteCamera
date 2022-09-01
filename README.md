@@ -4,6 +4,7 @@
 > [原项目地址](https://github.com/duwurensheng010/remoteyourcam-usb) 非常感谢前辈留下的资源！此项目仅做学习交流，不可直接商用。
 - 由于原项目不是AndroidStudio创建的，这里是把原项目的代码提取出来。 实测可以通过USB进行远程拍摄、图片获取资源。
 - 项目中所使用的指令，皆需和 [佳能](https://www.canon.com.cn/) 和 [尼康](https://www.nikon.com.cn/sc_CN/) 签署协议。
+- 如有侵权相关问题，请联系作者。
 # 注意
 - 相册默认读取的是卡2的资源，如果出现打开崩溃情况，可以修改[GalleryFragment](https://github.com/NightRainDream/RemoteCamera/blob/master/app/src/main/java/com/remoteyourcam/usb/view/GalleryFragment.java)类中，`onAllStoragesFound()`方法中修改默认SD卡的的位置
 - 项目中继承比较多，需要耐心看看，不是很复杂。
