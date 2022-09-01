@@ -648,7 +648,6 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
 
     @Override
     public void objectAdded(int handle, int format) {
-        Toast.makeText(getActivity(), "objectAdded-下一级", Toast.LENGTH_SHORT).show();
         if (camera() == null) {
             return;
         }

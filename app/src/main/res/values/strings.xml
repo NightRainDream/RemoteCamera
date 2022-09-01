@@ -23,8 +23,8 @@
   <string name="cancel">Cancel</string>
 
   <!-- session -->
-  <string name="focus">Focus</string>
-  <string name="capture">Capture</string>
+  <string name="focus">聚焦</string>
+  <string name="capture">拍照</string>
   <string name="continue_liveview">Continue</string>
 
   <!-- property grid -->

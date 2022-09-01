@@ -89,6 +89,20 @@ public class GalleryFragment extends SessionFragment implements Camera.StorageIn
         });
         enableUi(false);
         ((SessionActivity) getActivity()).setSessionView(this);
+        storageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //SD卡选择
+                int sId = storageAdapter.getItemHandle(i);
+                camera().retrieveImageHandles(GalleryFragment.this,sId ,
+                        PtpConstants.ObjectFormat.EXIF_JPEG);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         return view;
     }
 
@@ -201,9 +215,9 @@ public class GalleryFragment extends SessionFragment implements Camera.StorageIn
                 } else if (storageAdapter.getCount() == 1) {
                     storageSpinner.setEnabled(false);
                 }
+                //这里我测试的相机是卡在卡2，所以默认加载了1.如果遇到崩溃或者没数据情况，请修改这里数据
                 storageSpinner.setSelection(1);
                 int sId = storageAdapter.getItemHandle(1);
-                Toast.makeText(getActivity(), "SD卡ID==>"+sId, Toast.LENGTH_SHORT).show();
                 camera().retrieveImageHandles(GalleryFragment.this,sId ,
                         PtpConstants.ObjectFormat.EXIF_JPEG);
             }
