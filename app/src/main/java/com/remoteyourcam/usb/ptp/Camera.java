@@ -1,12 +1,12 @@
 /**
  * Copyright 2013 Nils Assbeck, Guersel Ayaz and Michael Zoech
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -74,6 +74,13 @@ public interface Camera {
 
         void onLiveViewStopped();
 
+        /**
+         * 拍照结果回调
+         * @param objectHandle 对象ID
+         * @param filename 文件名称
+         * @param thumbnail 缩略图
+         * @param bitmap 原图
+         */
         void onCapturedPictureReceived(int objectHandle, String filename, Bitmap thumbnail, Bitmap bitmap);
 
         void onBulbStarted();

@@ -38,6 +38,7 @@ public class RetrievePictureAction implements PtpAction {
 
     @Override
     public void exec(IO io) {
+        //获取对象详情
         GetObjectInfoCommand getInfo = new GetObjectInfoCommand(camera, objectHandle);
         io.handleCommand(getInfo);
 
@@ -53,13 +54,14 @@ public class RetrievePictureAction implements PtpAction {
         Bitmap thumbnail = null;
         if (objectInfo.thumbFormat == PtpConstants.ObjectFormat.JFIF
                 || objectInfo.thumbFormat == PtpConstants.ObjectFormat.EXIF_JPEG) {
+            //获取缩略图
             GetThumb getThumb = new GetThumb(camera, objectHandle);
             io.handleCommand(getThumb);
             if (getThumb.getResponseCode() == Response.Ok) {
                 thumbnail = getThumb.getBitmap();
             }
         }
-
+        //获取原图
         GetObjectCommand getObject = new GetObjectCommand(camera, objectHandle, sampleSize);
         io.handleCommand(getObject);
 

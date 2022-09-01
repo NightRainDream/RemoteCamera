@@ -394,6 +394,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
     @Override
     public void onCapturedPictureReceived(int objectHandle, String filename, Bitmap thumbnail, Bitmap bitmap) {
         if (thumbnail != null) {
+            //收到拍摄的照片资源
             sessionFrag.capturedPictureReceived(objectHandle, filename, thumbnail, bitmap);
         } else {
             Toast.makeText(this, "No thumbnail available", Toast.LENGTH_SHORT).show();
@@ -432,7 +433,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
 
     @Override
     public void onObjectAdded(int handle, int format) {
-        Toast.makeText(this, "onObjectAdded", Toast.LENGTH_SHORT).show();
+        //收到拍摄照片通知
         sessionFrag.objectAdded(handle, format);
     }
 }

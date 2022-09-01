@@ -1,12 +1,12 @@
 /**
  * Copyright 2013 Nils Assbeck, Guersel Ayaz and Michael Zoech
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -54,6 +54,10 @@ import com.remoteyourcam.usb.ptp.model.LiveViewData;
 import com.remoteyourcam.usb.ptp.model.ObjectInfo;
 import com.remoteyourcam.usb.util.DimenUtil;
 
+
+/**
+ * 相机操作
+ */
 public class TabletSessionFragment extends SessionFragment implements GestureDetector.GestureHandler,
         Camera.RetrieveImageInfoListener {
 
@@ -651,11 +655,13 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
         if (camera() == null) {
             return;
         }
+        //如果是JPG格式的文件，通过handle获取文件字节
         if (format == PtpConstants.ObjectFormat.EXIF_JPEG) {
             if (isPro && liveViewToggle.isChecked() && showCapturedPictureNever) {
                 camera().retrieveImageInfo(this, handle);
                 handler.post(liveViewRestarterRunner);
             } else {
+                //获取JPG文件缩略图和原图
                 camera().retrievePicture(handle);
             }
         }

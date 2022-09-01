@@ -181,6 +181,7 @@ public class GalleryFragment extends SessionFragment implements Camera.StorageIn
 
     @Override
     public void capturedPictureReceived(int objectHandle, String filename, Bitmap thumbnail, Bitmap bitmap) {
+
     }
 
     @Override
