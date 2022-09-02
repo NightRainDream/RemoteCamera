@@ -149,7 +149,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
         if (settings.showChangelog(appVersionCode)) {
            // showChangelog();
         }
-
+        //构造方法中获取了 UsbManager 对象
         ptp = PtpService.Singleton.getInstance(this);
     }
 
@@ -169,6 +169,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
         }
         this.setIntent(intent);
         if (isInStart) {
+            //初始化USB连接,具体实现在 PtpUsbService 方法中
             ptp.initialize(this, intent);
         }
     }
@@ -181,6 +182,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
         }
         isInStart = true;
         ptp.setCameraListener(this);
+        //初始化USB连接,具体实现在 PtpUsbService 方法中
         ptp.initialize(this, getIntent());
     }
 

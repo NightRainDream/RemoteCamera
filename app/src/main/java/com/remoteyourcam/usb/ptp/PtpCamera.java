@@ -73,10 +73,16 @@ public abstract class PtpCamera implements Camera {
 
     private static final String TAG = PtpCamera.class.getSimpleName();
 
+    /**
+     * 执行指令的工作线程
+     */
     private final WorkerThread workerThread = new WorkerThread();
     private final PtpUsbConnection connection;
 
     protected final Handler handler = new Handler();
+    /**
+     * 存放执行指令的阻塞队列
+     */
     protected final LinkedBlockingQueue<PtpAction> queue = new LinkedBlockingQueue<PtpAction>();
     protected CameraListener listener;
     protected State state;
@@ -121,8 +127,11 @@ public abstract class PtpCamera implements Camera {
         state = State.Starting;
         vendorId = connection.getVendorId();
         productId = connection.getProductId();
+        //添加获取设备信息任务
         queue.add(new GetDeviceInfoCommand(this));
+        //添加开启会话任务
         openSession();
+        //启动工作线程
         workerThread.start();
         if (AppConfig.LOG) {
             Log.i(TAG, String.format("Starting session for %04x %04x", vendorId, productId));
@@ -556,18 +565,20 @@ public abstract class PtpCamera implements Camera {
 
                 if (lastEventCheck + AppConfig.EVENTCHECK_PERIOD < System.currentTimeMillis()) {
                     lastEventCheck = System.currentTimeMillis();
-                    //700毫秒查询一次事件
+                    //每700毫秒查询一次相机通知事件
                     PtpCamera.this.queueEventCheck();
                 }
 
                 PtpAction action = null;
                 try {
+                    //吐任务
                     action = queue.poll(1000, TimeUnit.MILLISECONDS);
                 } catch (InterruptedException e) {
                     // nop
                 }
 
                 if (action != null) {
+                    //执行任务，具体实现在下面 handleCommand 方法中
                     action.exec(this);
                 }
             }
@@ -694,6 +705,7 @@ public abstract class PtpCamera implements Camera {
 
                 infull.position(0);
                 try {
+                    //响应结果解析
                     command.receivedRead(infull);
                     infull = null;
                 } catch (RuntimeException e) {
