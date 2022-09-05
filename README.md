@@ -32,5 +32,5 @@
   - 在实时取景中设置对焦矩形（仅限尼康）
   - 曝光补偿
 # 友情连接
-- [佳能](https://www.canon.com.cn/)
+- [佳能](https://www.canon.com.cn/supports/sdk/icp/)
 - [尼康](https://www.nikon.com.cn/sc_CN/)
