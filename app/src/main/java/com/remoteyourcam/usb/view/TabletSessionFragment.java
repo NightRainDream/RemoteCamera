@@ -180,6 +180,9 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
                 onFocusClicked(v);
             }
         });
+        /**
+         * 远程拍照
+         */
         takePictureBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -650,6 +653,11 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
         }
     }
 
+    /**
+     * 设备资源添加事件通知
+     * @param handle 对象ID
+     * @param format 对象格式
+     */
     @Override
     public void objectAdded(int handle, int format) {
         if (camera() == null) {
@@ -688,6 +696,11 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
         camera().focus();
     }
 
+    /**
+     * 远程控制拍照
+     *
+     * @param view View
+     */
     public void onTakePictureClicked(View view) {
         // TODO necessary
         //liveView.setLiveViewData(null);

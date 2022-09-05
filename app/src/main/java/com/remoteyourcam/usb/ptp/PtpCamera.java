@@ -129,7 +129,7 @@ public abstract class PtpCamera implements Camera {
         productId = connection.getProductId();
         //添加获取设备信息任务
         queue.add(new GetDeviceInfoCommand(this));
-        //添加开启会话任务
+        //添加开启会话任务,具体的实现在对应的设备的方法里
         openSession();
         //启动工作线程
         workerThread.start();

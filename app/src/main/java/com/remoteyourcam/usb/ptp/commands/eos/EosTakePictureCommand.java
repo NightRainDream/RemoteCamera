@@ -31,6 +31,7 @@ public class EosTakePictureCommand extends EosCommand {
     @Override
     public void exec(IO io) {
         io.handleCommand(this);
+        //如果设备忙碌，进行重试
         if (responseCode == Response.DeviceBusy) {
             camera.onDeviceBusy(this, true);
         }

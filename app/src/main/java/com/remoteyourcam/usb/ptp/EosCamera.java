@@ -89,6 +89,7 @@ public class EosCamera extends PtpCamera {
         if (isBulbCurrentShutterSpeed()) {
             queue.add(new SimpleCommand(this, cameraIsCapturing ? Operation.EosBulbEnd : Operation.EosBulbStart));
         } else {
+            //向队列添加拍照任务
             queue.add(new EosTakePictureCommand(this));
         }
     }
