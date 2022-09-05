@@ -1,7 +1,7 @@
 # RemoteCamera
 通过USB-PTP协议，远程控制相机
 # 说明
-> [原项目地址](https://github.com/duwurensheng010/remoteyourcam-usb) 非常感谢前辈留下的资源！此项目仅做学习交流，不可直接商用。
+> [原项目地址](https://github.com/michaelzoech/remoteyourcam-usb) 非常感谢前辈留下的资源！此项目仅做学习交流，不可直接商用。
 - 由于原项目不是AndroidStudio创建的，这里是把原项目的代码提取出来。 实测可以通过USB进行远程拍摄、图片获取资源。
 - 项目中所使用的指令，皆需和 [佳能](https://www.canon.com.cn/) 、 [尼康](https://www.nikon.com.cn/sc_CN/) 签署协议。
 - 如有侵权相关问题，请联系作者。
