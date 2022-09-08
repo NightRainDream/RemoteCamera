@@ -31,15 +31,19 @@ public class EosOpenSessionAction implements PtpAction {
 
     @Override
     public void exec(IO io) {
+        //打开会话
         OpenSessionCommand openSession = new OpenSessionCommand(camera);
         io.handleCommand(openSession);
         if (openSession.getResponseCode() == PtpConstants.Response.Ok) {
+            //启动遥控拍摄模式
             EosSetPcModeCommand setPcMode = new EosSetPcModeCommand(camera);
             io.handleCommand(setPcMode);
             if (setPcMode.getResponseCode() == PtpConstants.Response.Ok) {
+                //设置时间查询方式-轮询
                 EosSetExtendedEventInfoCommand c = new EosSetExtendedEventInfoCommand(camera);
                 io.handleCommand(c);
                 if (c.getResponseCode() == PtpConstants.Response.Ok) {
+                    //会话完全打开，可进行操作相机
                     camera.onSessionOpened();
                 } else {
                     camera.onPtpError(String.format(

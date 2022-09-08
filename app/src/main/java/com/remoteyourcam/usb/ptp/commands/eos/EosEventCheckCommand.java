@@ -29,6 +29,9 @@ import com.remoteyourcam.usb.ptp.PtpConstants.Operation;
 import com.remoteyourcam.usb.ptp.PtpConstants.Property;
 import com.remoteyourcam.usb.ptp.PtpConstants.Response;
 
+/**
+ * 轮询事件通知
+ */
 public class EosEventCheckCommand extends EosCommand {
 
     private static final String TAG = EosEventCheckCommand.class.getSimpleName();
@@ -60,6 +63,7 @@ public class EosEventCheckCommand extends EosCommand {
 //               Log.i("999999", "event typeStr " + PtpConstants.eventToString(event));
             }
             switch (event) {
+                //对象添加通知
                 case Event.CustomEOS_ADD:{
                     int objectHandle = b.getInt();
                     int storageId = b.getInt();
@@ -173,9 +177,7 @@ public class EosEventCheckCommand extends EosCommand {
                     break;
                 }
                 default:
-                    //                if (BuildConfig.LOG) {
-                    //                    PacketUtil.logHexdump(b.array(), b.position(), eventLength - 8);
-                    //                }
+                    //这个不能少~~
                     skip(b, eventLength - 8);
                     break;
             }

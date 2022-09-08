@@ -36,9 +36,13 @@ public class DeviceInfo {
     public int[] devicePropertiesSupported;
     public int[] captureFormats;
     public int[] imageFormats;
+    //设备厂商
     public String manufacture;
+    //设备型号
     public String model;
+    //设备版本
     public String deviceVersion;
+    //设备序列号
     public String serialNumber;
 
     public DeviceInfo(ByteBuffer b, int length) {
