@@ -164,6 +164,7 @@ public class MainActivity extends SessionActivity implements CameraListener {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+        //如果在启动APP情况下，插入相机，选着打开方式后会再次打开APP。所以需要控制这里的启动方式。重新打开会走这里
         if (AppConfig.LOG) {
             Log.i(TAG, "onNewIntent " + intent.getAction());
         }
