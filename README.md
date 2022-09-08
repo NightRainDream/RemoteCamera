@@ -9,6 +9,7 @@
 - 相册默认读取的是卡2的资源，如果出现打开崩溃情况，可以修改[GalleryFragment](https://github.com/NightRainDream/RemoteCamera/blob/master/app/src/main/java/com/remoteyourcam/usb/view/GalleryFragment.java)类中，`onAllStoragesFound()`方法中修改默认SD卡的的位置
 - 项目中继承比较多，需要耐心看看，不是很复杂。
 - 原图获取项目中做了缩放处理，注意 `GetObjectCommand` 类中的 `BitmapFactory.Options options` 参数。
+- 部分手机需要打开OTG开关
 # 特征
 - 拍摄照片
 - 查看您拍摄的照片

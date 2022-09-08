@@ -97,6 +97,7 @@
             android:layout_height="@dimen/gridPropertyHeight" />
 
         <ImageView
+            android:background="#FF00FF"
             android:id="@+id/shootingModeView"
             android:layout_width="@dimen/gridPropertyWidth"
             android:layout_height="@dimen/gridPropertyHeight"

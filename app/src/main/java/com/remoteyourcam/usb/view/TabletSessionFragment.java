@@ -460,6 +460,7 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
 
     @Override
     public void propertyChanged(int property, int value) {
+        Toast.makeText(getActivity(), "正在操作："+property, Toast.LENGTH_SHORT).show();
         if (!inStart || camera() == null) {
             return;
         }
@@ -473,6 +474,7 @@ public class TabletSessionFragment extends SessionFragment implements GestureDet
                 colorTemp.setEditable(camera().isSettingPropertyPossible(Property.ColorTemperature));
             }
         } else if (property == Property.ShootingMode) {
+            Toast.makeText(getActivity(), "修改拍摄方式:"+ value, Toast.LENGTH_SHORT).show();
             shootingModeView.setImageResource(camera().propertyToIcon(property, value));
             for (Map.Entry<Integer, PropertyDisplayer> e : properties.entrySet()) {
                 e.getValue().setEditable(camera().isSettingPropertyPossible(e.getKey()));
